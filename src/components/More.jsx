@@ -46,7 +46,7 @@ function More() {
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold justify-between w-full hover:bg-[#eff3f41a] transition-colors">
+              <Disclosure.Button className="h-[54px] flex items-center px-4 font-bold justify-between w-full hover:bg-[#eff3f41a] transition-colors">
                 İçerik Üreticisi Stüdyosu
                 {open && (
                   <svg
@@ -91,10 +91,10 @@ function More() {
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold justify-between w-full hover:bg-[#eff3f41a] transition-colors">
+              <Disclosure.Button className="h-[54px] flex items-center px-4 font-bold justify-between w-full hover:bg-[#eff3f41a] transition-colors">
                 Profesyonel Araçlar
                 {!open && (
-                  <svg viewBox="0 0 24 24" width={18.75} height={18.75}>
+                  <svg viewBox="0 0 24 24" height={24}>
                     <path
                       fill="currentColor"
                       d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"
@@ -104,8 +104,7 @@ function More() {
                 {open && (
                   <svg
                     viewBox="0 0 24 24"
-                    width={18.75}
-                    height={18.75}
+                    height={24}
                     className="rotate-180 text-[#1d9bf0]"
                   >
                     <path
@@ -136,7 +135,7 @@ function More() {
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className="h-[52px] flex items-center px-4 font-bold justify-between w-full hover:bg-[#eff3f41a] transition-colors">
+              <Disclosure.Button className="h-[54px] flex items-center px-4 font-bold justify-between w-full hover:bg-[#eff3f41a] transition-colors">
                 Ayarlar ve Destek
                 {!open && (
                   <svg viewBox="0 0 24 24" width={18.75} height={18.75}>
