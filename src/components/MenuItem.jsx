@@ -1,8 +1,14 @@
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 function MenuItem({ item }) {
+  const { currentAccount } = useAuth();
+
   return (
-    <NavLink to={item.path} className="block py-[0.188rem] group">
+    <NavLink
+      to={item.path !== "/profile" ? item.path : `${currentAccount.username}`}
+      className="block py-[0.188rem] group"
+    >
       {({ isActive }) => (
         <div className="items-center gap-5 p-3 rounded-full transition-colors inline-flex group-hover:bg-[#eff3f41a]">
           <div className="w-[26.25px] h-[26.25px] relative">
