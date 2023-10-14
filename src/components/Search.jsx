@@ -51,8 +51,8 @@ function Search() {
         )}
       </label>
       {focus && (
-        <div className="min-h-[100px] absolute top-full shadow-box text-center rounded-lg -translate-y-1">
-          <p className="p-3 pt-5 text-[#71767B] leading-5">
+        <div className="min-h-[100px] absolute top-full shadow-box text-center rounded-lg bg-black -translate-y-1 z-10">
+          <p className="p-3 pt-5 text-[#71767B] leading-5 relative">
             Kişileri, listeleri veya anahtar kelimeleri aramayı dene
           </p>
         </div>
