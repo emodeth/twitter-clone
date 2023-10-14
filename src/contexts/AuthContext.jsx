@@ -29,7 +29,7 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ currentAccount, setCurrentAccount, accounts }}
+      value={{ currentAccount, setCurrentAccount, accounts, setAccounts }}
     >
       {children}
     </AuthContext.Provider>
