@@ -1,17 +1,16 @@
 export const whoToFollow = [
   {
     id: 1283,
-    username: "MKA",
-    fullName: "Atatürk",
-    avatar:
-      "https://pbs.twimg.com/profile_images/1663493447448182784/2TxXbbZB_400x400.jpg",
+    username: "guts",
+    fullName: "Guts",
+    avatar: "https://pbs.twimg.com/media/F8L_fArX0AAqxZY?format=jpg&name=small",
   },
   {
     id: 1881,
-    username: "enverpasha",
-    fullName: "İsmail Enver",
+    username: "hisoka",
+    fullName: "Hisoka",
     avatar:
-      "https://pbs.twimg.com/profile_images/1456654672593293318/A0rWlrBl_400x400.jpg",
+      "https://pbs.twimg.com/media/F8SHJGYXEAA6TDe?format=jpg&name=medium",
   },
   {
     id: 4124124,
