@@ -1,11 +1,18 @@
+import { colors } from "../utils/colors";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import { useAppearance } from "../contexts/AppearanceContext";
 import { useModal } from "../contexts/ModalContext";
 
 function AppearanceModal() {
-  const { backgroundColor, handleDarkTheme, handleLightTheme, handleDimTheme } =
-    useAppearance();
+  const {
+    backgroundColor,
+    handleDarkTheme,
+    handleLightTheme,
+    handleDimTheme,
+    generalColor,
+    setGeneralColor,
+  } = useAppearance();
 
   const { setModal } = useModal();
 
@@ -31,7 +38,7 @@ function AppearanceModal() {
                 <svg
                   viewBox="0 0 22 22"
                   height={18.75}
-                  className="text-[#1d9bf0] ml-0.5"
+                  className="text-[color:var(--color-primary)] ml-0.5"
                 >
                   <path
                     fill="currentColor"
@@ -46,7 +53,10 @@ function AppearanceModal() {
                 X&apos;in merkezinde, tıpkı bunun gibi gönderi denen kısa
                 mesajlar yatar. Gönderiler; fotoğraflar, videolar, bağlantılar,
                 metinler, etiketler ve&nbsp;
-                <Link className="text-[#1d9bf0] hover:underline" to="/">
+                <Link
+                  className="text-[color:var(--color-primary)] hover:underline"
+                  to="/"
+                >
                   @X
                 </Link>
                 &nbsp;gibi bahsetmeler içerebilir.
@@ -55,38 +65,120 @@ function AppearanceModal() {
           </div>
         </div>
 
-        <div>
-          <h6 className="text-[color:var(--color-base-secondary)] font-bold text-[13px] mb-1 leading-5">
-            Arka plan
-          </h6>
-          <div className="px-3 py-1 mb-3 flex items-center bg-[color:var(--background-secondary)] rounded-2xl">
-            <button
-              onClick={handleLightTheme}
-              className={`${"flex-1 h-16 px-5 bg-white text-[#0f1419] font-bold rounded m-1"} ${
-                backgroundColor.name === "light" &&
-                "border-2 border-[color:var(--color-primary)]"
-              }`}
-            >
-              Varsayılan
-            </button>
-            <button
-              onClick={handleDimTheme}
-              className={`${"flex-1 h-16 px-5 bg-[#15202b] text-[#f7f9f9] font-bold rounded m-1"} ${
-                backgroundColor.name === "dim" &&
-                "border-2 border-[color:var(--color-primary)]"
-              }`}
-            >
-              Loş
-            </button>
-            <button
-              onClick={handleDarkTheme}
-              className={`${"flex-1 h-16 px-5 bg-black text-[#f7f9f9] font-bold rounded m-1"} ${
-                backgroundColor.name === "dark" &&
-                "border-2 border-[color:var(--color-primary)]"
-              }`}
-            >
-              Işıklar kapalı
-            </button>
+        <div className="flex flex-col gap-3">
+          <div>
+            <h6 className="text-[color:var(--color-base-secondary)] font-bold text-[13px] mb-1 leading-5">
+              Renk
+            </h6>
+
+            <div className="bg-[color:var(--background-secondary)] rounded-2xl py-2 flex items-center justify-around">
+              {colors.map((color, i) => (
+                <button
+                  style={{ "--bg": color }}
+                  onClick={() =>
+                    setGeneralColor((prev) => ({ ...prev, primary: color }))
+                  }
+                  key={i}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center bg-[color:var(--bg)]`}
+                >
+                  {color === generalColor.primary && (
+                    <svg viewBox="0 0 24 24" width={25}>
+                      <path
+                        fill="currentColor"
+                        d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"
+                      ></path>
+                    </svg>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h6 className="text-[color:var(--color-base-secondary)] font-bold text-[13px] mb-1 leading-5">
+              Arka plan
+            </h6>
+            <div className="px-3 py-1 mb-3 flex items-center bg-[color:var(--background-secondary)] rounded-2xl">
+              <button
+                onClick={handleLightTheme}
+                className={`${"flex-1 h-16 pr-3 pl-2 bg-white text-[#0f1419] font-bold rounded m-1 group flex items-center"} ${
+                  backgroundColor.name === "light" &&
+                  "border-2 border-[color:var(--color-primary)]"
+                }`}
+              >
+                <div className="w-10 h-10 rounded-full flex-shrink-0 group-hover:bg-black/5 mr-1.5 flex items-center justify-center transition-colors">
+                  <div
+                    className={`${"w-5 h-5 rounded-full border-2 border-[#b9cad3]"} ${
+                      backgroundColor.name === "light" &&
+                      "!border-[color:var(--color-primary)] bg-[color:var(--color-primary)]"
+                    }`}
+                  >
+                    {backgroundColor.name === "light" && (
+                      <svg viewBox="0 0 24 24">
+                        <path
+                          fill="currentColor"
+                          d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"
+                        ></path>
+                      </svg>
+                    )}
+                  </div>
+                </div>
+                Varsayılan
+              </button>
+              <button
+                onClick={handleDimTheme}
+                className={`${"flex-1 h-16 pr-3 pl-2 bg-[#15202b] text-[#f7f9f9] font-bold rounded m-1 group flex items-center"} ${
+                  backgroundColor.name === "dim" &&
+                  "border-2 border-[color:var(--color-primary)]"
+                }`}
+              >
+                <div className="w-10 h-10 rounded-full flex-shrink-0 group-hover:bg-white/5 mr-1.5 flex items-center justify-center transition-colors">
+                  <div
+                    className={`${"w-5 h-5 rounded-full border-2 border-[#5c6e7e]"} ${
+                      backgroundColor.name === "dim" &&
+                      "!border-[color:var(--color-primary)] bg-[color:var(--color-primary)]"
+                    }`}
+                  >
+                    {backgroundColor.name === "dim" && (
+                      <svg viewBox="0 0 24 24">
+                        <path
+                          fill="currentColor"
+                          d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"
+                        ></path>
+                      </svg>
+                    )}
+                  </div>
+                </div>
+                Loş
+              </button>
+              <button
+                onClick={handleDarkTheme}
+                className={`${"flex-1 h-16 pr-3 pl-2 bg-black text-[#f7f9f9] font-bold rounded m-1 group flex items-center"} ${
+                  backgroundColor.name === "dark" &&
+                  "border-2 border-[color:var(--color-primary)]"
+                }`}
+              >
+                <div className="w-10 h-10 rounded-full flex-shrink-0 group-hover:bg-white/10 mr-1.5 flex items-center justify-center transition-colors">
+                  <div
+                    className={`${"w-5 h-5 rounded-full border-2 border-[#3e4144]"} ${
+                      backgroundColor.name === "dark" &&
+                      "!border-[color:var(--color-primary)] bg-[color:var(--color-primary)]"
+                    }`}
+                  >
+                    {backgroundColor.name === "dark" && (
+                      <svg viewBox="0 0 24 24">
+                        <path
+                          fill="currentColor"
+                          d="M9.64 18.952l-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32 9.64 18.952z"
+                        ></path>
+                      </svg>
+                    )}
+                  </div>
+                </div>
+                <span className="block">Işıklar </span>&nbsp;
+                <span>kapalı</span>
+              </button>
+            </div>
           </div>
         </div>
 

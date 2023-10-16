@@ -20,7 +20,7 @@ function TopicItem({ topic }) {
         {formatter.format(topic.postCount)} posts
       </p>
       <Popover className="absolute top-1.5 right-2">
-        <Popover.Button className="w-[34.75px] h-[34.75px] rounded-full flex items-center justify-center text-[color:var(--color-base-secondary)] hover:bg-[#1d9bf01a] hover:text-[#1d9bf0] transition-colors">
+        <Popover.Button className="w-[34.75px] h-[34.75px] rounded-full flex items-center justify-center text-[color:var(--color-base-secondary)] hover:bg-[#1d9bf01a] hover:text-[color:var(--color-primary)] transition-colors">
           <svg viewBox="0 0 24 24" width={18.75} height={18.75}>
             <path
               fill="currentColor"

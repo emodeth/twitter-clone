@@ -56,7 +56,7 @@ function More() {
                     viewBox="0 0 24 24"
                     width={18.75}
                     height={18.75}
-                    className="rotate-180 text-[#1d9bf0]"
+                    className="rotate-180 text-[color:var(--color-primary)]"
                   >
                     <path
                       fill="currentColor"
@@ -109,7 +109,7 @@ function More() {
                     viewBox="0 0 24 24"
                     width={18.75}
                     height={18.75}
-                    className="rotate-180 text-[#1d9bf0]"
+                    className="rotate-180 text-[color:var(--color-primary)]"
                   >
                     <path
                       fill="currentColor"
@@ -154,7 +154,7 @@ function More() {
                     viewBox="0 0 24 24"
                     width={18.75}
                     height={18.75}
-                    className="rotate-180 text-[#1d9bf0]"
+                    className="rotate-180 text-[color:var(--color-primary)]"
                   >
                     <path
                       fill="currentColor"

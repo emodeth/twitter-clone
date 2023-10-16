@@ -36,17 +36,16 @@ function AppearanceProvider({ children }) {
   const lightShadow =
     "rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px";
 
-  const [backgroundColor, setBackgroundColor] = useState(lightTheme);
+  const [backgroundColor, setBackgroundColor] = useState(dimTheme);
 
   const [generalColor, setGeneralColor] = useState({
     primary: "#1d9bf0",
-    secondary: "#8ecdf8",
-    base: "#0f1419",
-    baseSecondary: "#536471",
+    base: "#e7e9ea",
+    baseSecondary: "#8b98a5",
   });
 
   const [fontSize, setFontSize] = useState(15);
-  const [boxShadow, setBoxShadow] = useState(lightShadow);
+  const [boxShadow, setBoxShadow] = useState(dimShadow);
 
   function handleDarkTheme() {
     setBackgroundColor(darkTheme);
