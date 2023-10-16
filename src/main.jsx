@@ -13,7 +13,7 @@ import Bookmarks from "./pages/Bookmarks";
 import Verified from "./pages/Verified";
 import Profile from "./pages/Profile";
 import AuthProvider from "./contexts/AuthContext";
-import ModalProvider from "./contexts/modalContext";
+import ModalProvider from "./contexts/ModalContext";
 import AppearanceProvider from "./contexts/AppearanceContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

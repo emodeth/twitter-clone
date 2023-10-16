@@ -1,4 +1,4 @@
-import { useModal } from "../contexts/modalContext";
+import { useModal } from "../contexts/ModalContext";
 import modals from "./modals";
 
 function Modal() {

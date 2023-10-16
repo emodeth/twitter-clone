@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { useModal } from "../contexts/modalContext";
+import { useModal } from "../contexts/ModalContext";
 
 import Sidebar from "../components/Sidebar";
 import Rightbar from "../components/Rightbar";

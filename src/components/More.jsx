@@ -1,6 +1,6 @@
 import { Popover, Disclosure } from "@headlessui/react";
 import { Link } from "react-router-dom";
-import { useModal } from "../contexts/modalContext";
+import { useModal } from "../contexts/ModalContext";
 
 function More() {
   const { setModal } = useModal();

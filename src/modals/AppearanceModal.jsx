@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import { useAppearance } from "../contexts/AppearanceContext";
-import { useModal } from "../contexts/modalContext";
+import { useModal } from "../contexts/ModalContext";
 
 function AppearanceModal() {
   const { backgroundColor, handleDarkTheme, handleLightTheme, handleDimTheme } =
