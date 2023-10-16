@@ -74,9 +74,12 @@ function AppearanceModal() {
             <div className="bg-[color:var(--background-secondary)] rounded-2xl py-2 flex items-center justify-around">
               {colors.map((color, i) => (
                 <button
-                  style={{ "--bg": color }}
+                  style={{ "--bg": color.primary }}
                   onClick={() =>
-                    setGeneralColor((prev) => ({ ...prev, primary: color }))
+                    setGeneralColor((prev) => ({
+                      ...prev,
+                      primary: color.primary,
+                    }))
                   }
                   key={i}
                   className={`w-10 h-10 rounded-full flex items-center justify-center bg-[color:var(--bg)]`}
