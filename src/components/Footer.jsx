@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="mb-4 px-4 flex flex-wrap text-[#71767B] text-[13px] leading-4 gap-2">
+    <footer className="mb-4 px-4 flex flex-wrap text-[color:var(--color-base-secondary)] text-[13px] leading-4 gap-2">
       <Link to="/" className="hover:underline">
         Hizmet şartları
       </Link>
@@ -33,20 +33,20 @@ function Footer() {
               />
             </svg>
           </Popover.Button>
-          <Popover.Panel className="bottom-0 right-0 absolute bg-black shadow-box text-white w-[180px] max-w-[384px] rounded-xl overflow-hidden">
-            <button className="w-full px-4 py-3 font-bold text-left text-[15px] leading-5 hover:bg-[#16181ccc] transition-colors">
+          <Popover.Panel className="bottom-0 right-0 absolute bg-[color:var(--background-primary)] shadow-box text-[color:var(--color-base)] w-[180px] max-w-[384px] rounded-xl overflow-hidden">
+            <button className="w-full px-4 py-3 font-bold text-left text-[15px] leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
               Hakkında
             </button>
-            <button className="w-full px-4 py-3 font-bold text-left text-[15px] leading-5 hover:bg-[#16181ccc] transition-colors">
+            <button className="w-full px-4 py-3 font-bold text-left text-[15px] leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
               X uygulamasını indir
             </button>
-            <button className="w-full px-4 py-3 font-bold text-left text-[15px] leading-5 hover:bg-[#16181ccc] transition-colors">
+            <button className="w-full px-4 py-3 font-bold text-left text-[15px] leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
               Durum
             </button>
-            <button className="w-full px-4 py-3 font-bold text-left text-[15px] leading-5 hover:bg-[#16181ccc] transition-colors">
+            <button className="w-full px-4 py-3 font-bold text-left text-[15px] leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
               İşletmeler için X
             </button>
-            <button className="w-full px-4 py-3 font-bold text-left text-[15px] leading-5 hover:bg-[#16181ccc] transition-colors">
+            <button className="w-full px-4 py-3 font-bold text-left text-[15px] leading-5 hover:bg-[color:var(--background-secondary)] transition-colors">
               Geliştiriciler
             </button>
           </Popover.Panel>

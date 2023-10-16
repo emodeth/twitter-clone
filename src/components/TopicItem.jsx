@@ -12,13 +12,15 @@ function TopicItem({ topic }) {
       to="/"
       className="py-3 px-4 hover:bg-white/[0.03] transition-colors relative"
     >
-      <p className="text-[13px] text-[#71767b] leading-4">{topic.title}</p>
+      <p className="text-[13px] text-[color:var(--color-base-secondary)] leading-4">
+        {topic.title}
+      </p>
       <h6 className="font-bold leading-5 mt-0.5">{topic.topic}</h6>
-      <p className="text-[13px] text-[#71767b] mt-1">
+      <p className="text-[13px] text-[color:var(--color-base-secondary)] mt-1">
         {formatter.format(topic.postCount)} posts
       </p>
       <Popover className="absolute top-1.5 right-2">
-        <Popover.Button className="w-[34.75px] h-[34.75px] rounded-full flex items-center justify-center text-[#71767b] hover:bg-[#1d9bf01a] hover:text-[#1d9bf0] transition-colors">
+        <Popover.Button className="w-[34.75px] h-[34.75px] rounded-full flex items-center justify-center text-[color:var(--color-base-secondary)] hover:bg-[#1d9bf01a] hover:text-[#1d9bf0] transition-colors">
           <svg viewBox="0 0 24 24" width={18.75} height={18.75}>
             <path
               fill="currentColor"
@@ -26,7 +28,7 @@ function TopicItem({ topic }) {
             />
           </svg>
         </Popover.Button>
-        <Popover.Panel className="w-[384px] absolute top-2 right-0 bg-black shadow-box rounded-xl outline-none z-50 overflow-hidden">
+        <Popover.Panel className="w-[384px] absolute top-2 right-0 bg-[color:var(--background-primary)] shadow-box rounded-xl outline-none z-50 overflow-hidden">
           <button className="py-3 px-4 flex items-center gap-3 w-full z-10 leading-5 hover:bg-white/[0.03]">
             <svg viewBox="0 0 24 24" width={18.75} height={18.75}>
               <path

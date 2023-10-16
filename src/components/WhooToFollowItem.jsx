@@ -16,8 +16,10 @@ function WhooToFollowItem({ item }) {
         className="h-10 w-10 rounded-full object-cover"
       />
       <div className="flex flex-col items-start mx-3 flex-1">
-        <p className="text-[#E7EAE9] font-bold">{item.fullName}</p>
-        <p className="text-[#71767B]">@{item.username}</p>
+        <p className="font-bold">{item.fullName}</p>
+        <p className="text-[color:var(--color-base-secondary)]">
+          @{item.username}
+        </p>
       </div>
       {following ? (
         <FollowingButton handleFollow={handleFollow} />

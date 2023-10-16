@@ -13,14 +13,14 @@ function Search() {
   return (
     <div
       ref={ref}
-      className="min-h-[32px] h-[53px] mb-3 flex items-center sticky top-0 bg-black z-50"
+      className="min-h-[32px] h-[53px] mb-3 flex items-center sticky top-0 bg-[color:var(--background-primary)] z-40"
     >
-      <label className="h-[43px] bg-[#202327] border border-transparent w-full rounded-full overflow-hidden focus-within:border-[#1d9bf0] focus-within:bg-transparent group relative">
+      <label className="h-[43px] bg-[color:var(--background-tertiary)] border border-transparent w-full rounded-full overflow-hidden focus-within:border-[#1d9bf0] focus-within:bg-transparent group relative">
         <div className="w-[56px] h-full flex items-center justify-center absolute top-0 left-0">
           <svg
             viewBox="0 0 24 24"
             height={18.75}
-            className="min-w-[44px] text-[#71767b] group-focus-within:text-[#1d9bf0]"
+            className="min-w-[44px] text-[color:var(--color-base-secondary)] group-focus-within:text-[#1d9bf0]"
           >
             <path
               fill="currentColor"
@@ -29,7 +29,7 @@ function Search() {
           </svg>
         </div>
         <input
-          className="w-full h-full bg-transparent outline-none p-3 pl-[55px] text-[#e7e9ea] placeholder-[#71767b]"
+          className="w-full h-full bg-transparent outline-none p-3 pl-[55px] text-[color:var(--color-base)] placeholder-[color:var(--color-base-secondary)]"
           placeholder="Ara"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -51,8 +51,8 @@ function Search() {
         )}
       </label>
       {focus && (
-        <div className="min-h-[100px] absolute top-full shadow-box text-center rounded-lg bg-black -translate-y-1 z-10">
-          <p className="p-3 pt-5 text-[#71767B] leading-5 relative">
+        <div className="min-h-[100px] absolute top-full shadow-box text-center rounded-lg bg-[color:var(--background-primary)] -translate-y-1 z-10">
+          <p className="p-3 pt-5 text-[color:var(--color-base-secondary)] leading-5 relative">
             Kişileri, listeleri veya anahtar kelimeleri aramayı dene
           </p>
         </div>

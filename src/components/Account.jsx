@@ -15,17 +15,17 @@ function Account() {
             alt="avatar"
           />
           <div className="flex flex-col items-start mx-3">
-            <p className="text-[#E7EAE9] font-bold">
-              {currentAccount.fullName}
+            <p className=" font-bold">{currentAccount.fullName}</p>
+            <p className="text-[color:var(--color-base-secondary)]">
+              @{currentAccount.username}
             </p>
-            <p className="text-[#71767B]">@{currentAccount.username}</p>
           </div>
 
           <svg
             viewBox="0 0 24 24"
             width={18.75}
             height={18.75}
-            className="ml-auto"
+            className="ml-auto "
           >
             <path
               fill="currentColor"
@@ -42,7 +42,7 @@ function Account() {
           leaveFrom="transfrom opacity-100"
           leaveTo="transfrom opacity-0"
         >
-          <Popover.Panel className="absolute bottom-[90px] w-[300px] left-1/2 -translate-x-1/2 bg-black shadow-box rounded-2xl overflow-hidden py-3">
+          <Popover.Panel className="absolute bottom-[90px] w-[300px] left-1/2 -translate-x-1/2 bg-[color:var(--background-primary)] shadow-box rounded-2xl overflow-hidden py-3">
             {({ close }) => <AccountPanel close={close} />}
           </Popover.Panel>
         </Transition>

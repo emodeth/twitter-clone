@@ -23,8 +23,10 @@ function AccountPanel({ close }) {
             alt="avatar"
           />
           <div className="flex flex-col items-start mx-3 flex-1">
-            <p className="text-[#E7EAE9] font-bold">{acc.fullName}</p>
-            <p className="text-[#71767B]">@{acc.username}</p>
+            <p className="font-bold">{acc.fullName}</p>
+            <p className="text-[color:var(--color-base-secondary)]">
+              @{acc.username}
+            </p>
           </div>
 
           {currentAccount.id === acc.id && (
@@ -40,15 +42,15 @@ function AccountPanel({ close }) {
           )}
         </button>
       ))}
-      <div className="h-px bg-[#2f3336] my-3"></div>
+      <div className="h-px bg-[color:var(--background-tertiary)] my-3"></div>
 
-      <button className="py-3 px-4 text-left hover:bg-[#eff3f41a] transition-colors w-full font-bold text-[#e7e9ea]">
+      <button className="py-3 px-4 text-left hover:bg-[#eff3f41a] transition-colors w-full font-bold">
         Var olan bir hesap ekle
       </button>
-      <button className="py-3 px-4 text-left hover:bg-[#eff3f41a] transition-colors w-full font-bold text-[#e7e9ea]">
+      <button className="py-3 px-4 text-left hover:bg-[#eff3f41a] transition-colors w-full font-bold">
         Hesapları yönet
       </button>
-      <button className="py-3 px-4 text-left hover:bg-[#eff3f41a] transition-colors w-full font-bold text-[#e7e9ea]">
+      <button className="py-3 px-4 text-left hover:bg-[#eff3f41a] transition-colors w-full font-bold">
         @{currentAccount.username} hesabından çıkış yap
       </button>
     </div>

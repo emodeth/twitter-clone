@@ -2,7 +2,7 @@ import Button from "./Button";
 
 function Subscribe() {
   return (
-    <div className="bg-[#16181c] rounded-2xl mb-4 border border-[#16181c] py-3 px-4 flex flex-col gap-2.5 text-[#e7e9ea]">
+    <div className="bg-[color:var(--background-secondary)] rounded-2xl mb-4 border border-[color:var(--background-secondary)] py-3 px-4 flex flex-col gap-2.5">
       <h6 className="text-xl leading-6 font-extrabold">
         Premium&apos;a Abone Ol
       </h6>
