@@ -9,7 +9,7 @@ function WhooToFollowItem({ item }) {
   }
 
   return (
-    <button className="py-3 px-4 flex transition-colors items-center hover:bg-[#eff3f41a] cursor-pointer">
+    <div className="py-3 px-4 flex transition-colors items-center hover:bg-[#eff3f41a] cursor-pointer">
       <img
         alt="avatar"
         src={item.avatar}
@@ -26,7 +26,7 @@ function WhooToFollowItem({ item }) {
       ) : (
         <FollowButton handleFollow={handleFollow} />
       )}
-    </button>
+    </div>
   );
 }
 

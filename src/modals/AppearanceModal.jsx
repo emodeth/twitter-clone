@@ -1,8 +1,10 @@
+import Button from "../components/Button";
+import { fontSizes } from "../utils/fontSizes";
 import { colors } from "../utils/colors";
 import { Link } from "react-router-dom";
-import Button from "../components/Button";
 import { useAppearance } from "../contexts/AppearanceContext";
 import { useModal } from "../contexts/ModalContext";
+import { useEffect, useState } from "react";
 
 function AppearanceModal() {
   const {
@@ -12,9 +14,19 @@ function AppearanceModal() {
     handleDimTheme,
     generalColor,
     setGeneralColor,
+    fontSize,
+    setFontSize,
   } = useAppearance();
 
   const { setModal } = useModal();
+
+  const [fontSizeProgress, setFontSizeProgress] = useState(0);
+
+  useEffect(() => {
+    setFontSizeProgress(
+      document.querySelector(".active-font-size").offsetLeft + 23
+    );
+  }, [fontSize]);
 
   return (
     <div className="w-[600px] flex flex-col items-center">
@@ -68,6 +80,42 @@ function AppearanceModal() {
         <div className="flex flex-col gap-3">
           <div>
             <h6 className="text-[color:var(--color-base-secondary)] font-bold text-[13px] mb-1 leading-5">
+              Yazı tipi boyutu
+            </h6>
+
+            <div className="bg-[color:var(--background-secondary)] rounded-2xl p-4 flex items-center">
+              <div className="text-[13px] mr-5">Aa</div>
+              <div className="h-1 flex-1 rounded-full relative bg-[color:var(--color-secondary)]">
+                <div
+                  style={{ width: fontSizeProgress }}
+                  className="h-1 absolute top-0 left-0 rounded-full bg-[color:var(--color-primary)]"
+                ></div>
+                <div className="flex justify-between absolute -top-3.5 w-full">
+                  {fontSizes.map((fs, i) => (
+                    <div
+                      className={`${"w-8 h-8 rounded-full flex items-center justify-center relative before:absolute before:inset-0 before:rounded-full before:hover:bg-[color:var(--color-primary)] before:opacity-10 transition-all last:-mr-1.5"} ${
+                        fontSize === fs && "active-font-size"
+                      }`}
+                      key={i}
+                      onClick={() => setFontSize(fs)}
+                    >
+                      <button
+                        className={`${"rounded-full bg-[color:var(--color-secondary)]"} ${
+                          fontSize == fs ? "w-4 h-4" : "w-3 h-3"
+                        } ${
+                          fs <= fontSize && "!bg-[color:var(--color-primary)]"
+                        }`}
+                      ></button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="text-[20px] ml-5">Aa</div>
+            </div>
+          </div>
+
+          <div>
+            <h6 className="text-[color:var(--color-base-secondary)] font-bold text-[13px] mb-1 leading-5">
               Renk
             </h6>
 
@@ -78,13 +126,13 @@ function AppearanceModal() {
                   onClick={() =>
                     setGeneralColor((prev) => ({
                       ...prev,
-                      primary: color.primary,
+                      ...color,
                     }))
                   }
                   key={i}
                   className={`w-10 h-10 rounded-full flex items-center justify-center bg-[color:var(--bg)]`}
                 >
-                  {color === generalColor.primary && (
+                  {color.primary === generalColor.primary && (
                     <svg className="text-white" viewBox="0 0 24 24" width={25}>
                       <path
                         fill="currentColor"

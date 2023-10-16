@@ -40,7 +40,7 @@ function AppearanceProvider({ children }) {
 
   const [generalColor, setGeneralColor] = useState({
     primary: "#1d9bf0",
-    secondar: "#8ecdf8",
+    secondary: "#8ecdf8",
     base: "#e7e9ea",
     baseSecondary: "#8b98a5",
   });
